@@ -4,7 +4,7 @@ resource "aws_instance" "instance" {
   vpc_security_group_ids = [data.aws_security_group.selected.id]
 
   tags = {
-   name = var.component
+   Name = var.component
   }
 }
 
@@ -20,7 +20,7 @@ resource "null_resource" "ansible" {
 
     inline = [
       "sudo pip3.11 install ansible",
-      "ansible-pull -i localhost, -u https://github.com/a78devops/expense-ansible expense.yml -e env=${var.env} -e role_name=${var.component}"
+      "ansible-pull -i localhost, -U https://github.com/a78devops/expense-ansible expense.yml -e env=${var.env} -e role_name=${var.component}"
     ]
   }
 }
