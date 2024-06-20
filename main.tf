@@ -28,4 +28,6 @@ module "mysql" {
   ssh_pass      = var.ssh_pass
   env           = var.env
   zone_id       = var.zone_id
+  vault_token   = var.vault_token
 }
+

@@ -3,8 +3,5 @@ variable "instance_type" {}
 variable "ssh_user" {}
 variable "ssh_pass" {}
 variable "zone_id" {}
-#variable "vault_token" {}
-variable "movie" {}
-output "movie" {
-  value = var.movie
-}
+variable "vault_token" {}
+
