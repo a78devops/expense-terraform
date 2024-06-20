@@ -7,7 +7,7 @@ if [ -z "$env" ]; then
 fi
 
 if [ -z "$action" ]; then
-  echo "input action(apply|destroy) missing"
+  echo "input action (apply|destroy) missing"
   exit 1
 fi
 
