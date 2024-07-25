@@ -126,7 +126,7 @@ resource "aws_subnet" "backend" {
 }
 
 resource "aws_route_table" "backend" {
-  count             = length(var.backend_subnets)
+  count  = length(var.backend_subnets)
   vpc_id = aws_vpc.main.id
 
   route {
@@ -164,7 +164,7 @@ resource "aws_subnet" "db" {
 }
 
 resource "aws_route_table" "db" {
-  count             = length(var.db_subnets)
+  count  = length(var.db_subnets)
   vpc_id = aws_vpc.main.id
 
   route {
