@@ -32,7 +32,7 @@ resource "aws_subnet" "frontend" {
   availability_zone = var.availability_zones[count.index]
 
   tags = {
-    Name = "${var.env}-frontend-subnet-${count.index+1}"
+    Name = "${var.env}-frontend-subnet-${count.index + 1}"
   }
 }
 
@@ -46,7 +46,7 @@ resource "aws_route_table" "frontend" {
   }
 
   tags = {
-    name = "${var.env}-frontend-rt-${count.index+1}"
+    name = "${var.env}-frontend-rt-${count.index + 1}"
   }
 
 }
@@ -64,7 +64,7 @@ resource "aws_subnet" "backend" {
   availability_zone = var.availability_zones[count.index]
 
   tags = {
-    Name = "${var.env}-backend-subnet-${count.index+1}"
+    Name = "${var.env}-backend-subnet-${count.index + 1}"
   }
 }
 
@@ -78,7 +78,7 @@ resource "aws_route_table" "backend" {
   }
 
   tags = {
-    name = "${var.env}-backend-rt-${count.index+1}"
+    name = "${var.env}-backend-rt-${count.index + 1}"
   }
 
 }
@@ -96,7 +96,7 @@ resource "aws_subnet" "db" {
   availability_zone = var.availability_zones[count.index]
 
   tags = {
-    Name = "${var.env}-db-subnet-${count.index+1}"
+    Name = "${var.env}-db-subnet-${count.index + 1}"
   }
 }
 
@@ -110,7 +110,7 @@ resource "aws_route_table" "db" {
   }
 
   tags = {
-    name = "${var.env}-db-rt-${count.index+1}"
+    name = "${var.env}-db-rt-${count.index + 1}"
   }
 
 }
@@ -128,7 +128,7 @@ resource "aws_subnet" "public" {
   availability_zone = var.availability_zones[count.index]
 
   tags = {
-    Name = "${var.env}-public-subnet-${count.index+1}"
+    Name = "${var.env}-public-subnet-${count.index + 1}"
   }
 }
 
@@ -142,7 +142,7 @@ resource "aws_route_table" "public" {
   }
 
   tags = {
-    name = "${var.env}-public-rt-${count.index+1}"
+    name = "${var.env}-public-rt-${count.index + 1}"
   }
 
 }
