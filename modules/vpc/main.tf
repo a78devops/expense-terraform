@@ -67,7 +67,7 @@ resource "aws_nat_gateway" "ngw" {
   subnet_id     = aws_subnet.public[count.index].id
 
   tags = {
-    Name = "${var.env}-ngw-${count.inex + 1}"
+    Name = "${var.env}-ngw-${count.index + 1}"
   }
 }
 
