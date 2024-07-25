@@ -136,3 +136,4 @@ resource "aws_route" "default-vpc" {
   destination_cidr_block    = var.vpc_cidr_block
 }
 
+
