@@ -99,7 +99,7 @@ resource "aws_route_table" "frontend" {
 
   route {
     cidr_block                = "0.0.0.0/0"
-    vpc_peering_connection_id = aws_nat_gateway.ngw[count.index].id
+    nat_gateway_id            = aws_nat_gateway.ngw[count.index].id
   }
 
   tags = {
@@ -130,13 +130,13 @@ resource "aws_route_table" "backend" {
   vpc_id = aws_vpc.main.id
 
   route {
-    cidr_block = var.default_vpc_cidr
+    cidr_block                = var.default_vpc_cidr
     vpc_peering_connection_id = aws_vpc_peering_connection.main.id
   }
 
   route {
     cidr_block                = "0.0.0.0/0"
-    vpc_peering_connection_id = aws_nat_gateway.ngw[count.index].id
+    nat_gateway_id            = aws_nat_gateway.ngw[count.index].id
   }
 
   tags = {
@@ -174,7 +174,7 @@ resource "aws_route_table" "db" {
 
   route {
     cidr_block                = "0.0.0.0/0"
-    vpc_peering_connection_id = aws_nat_gateway.ngw[count.index].id
+    nat_gateway_id            = aws_nat_gateway.ngw[count.index].id
   }
 
   tags = {
