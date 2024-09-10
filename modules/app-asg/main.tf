@@ -41,6 +41,13 @@ resource "aws_launch_template" "main" {
   image_id                = data.aws_ami.ami.id
   instance_type           = var.instance_type
   vpc_security_group_ids  = [aws_security_group.main.id]
+
+  user_data = base64decode(templatefile("${path.module}/userdata.sh", {
+    component    = var.component
+    env          = var.env
+    vault_token  = var.vault_token
+  }))
+
 }
 
 
@@ -58,7 +65,7 @@ resource "aws_autoscaling_group" "main" {
   }
 
   tag {
-    key                 = "name"
+    key                 = "Name"
     value               = "${var.component}-${var.env}"
     propagate_at_launch = true
   }
